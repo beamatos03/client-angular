@@ -26,6 +26,7 @@
       <th scope="col">Id</th>
       <th scope="col">Nome</th>
       <th scope="col">E-Mail</th>
+      <th scope="col" class="d-flex justify-content-end">Opções</th>
     </tr>
   </thead>
   <tbody>
@@ -33,6 +34,10 @@
       <th scope="row">{{ client.id }}</th>
       <td>{{client.name}}</td>
       <td>{{client.email}}</td>
+      <td class="d-flex justify-content-end">
+        <button class="btn-primary me-1 btn" (click)="edit(client)">Editar</button>
+        <button class="btn btn-danger" (click)="remove(client)">Excluir</button>
+      </td>
     </tr>
   </tbody>
 </table>

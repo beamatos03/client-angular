@@ -21,4 +21,14 @@ export class ClientService {
   save(client: Client): Observable<Client>{
     return this.http.post<Client>(this.url, client);
    }
+
+
+ remove(client: Client): Observable<void>{
+  return this.http.delete<void>(`${this.url}/${client.id}`);
  }
+
+
+ update(client: Client): Observable<Client>{
+  return this.http.put<Client>(`${this.url}/${client.id}`, client);
+ }
+}
